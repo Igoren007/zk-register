@@ -6,7 +6,7 @@
 [Service]
 #  WorkingDirectory=/zk-reg
 #  User=root
-  ExecStart=/zk-reg/env/bin/python3 /zk-reg/register.py
+  ExecStart=/zk-reg/my-env/bin/python3 /zk-reg/register.py
 #  ExecStop=/zk-reg/env/bin/python3 /zk-reg/register.py --stop
 #  ExecReload=/zk-reg/env/bin/python3 /zk-reg/register.py --restart
 #  Type=simple
