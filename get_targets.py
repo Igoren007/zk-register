@@ -33,7 +33,7 @@ def list2dict(lst):
         host = []
         host.append(f"{ip}:9100")
 #        dct['target'] = f"{ip}:9100"
-        dct['target'] = host
+        dct['targets'] = host
         out.append(dct)
     return out
 
