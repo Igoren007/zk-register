@@ -1,0 +1,21 @@
+#на целевой машине предварительно
+#sudo pip install docker 
+- name: Deploy container
+  gather_facts: true
+  hosts: aws
+  become: true
+
+  tasks:
+
+  - name: Pull image
+    docker_image:
+      name: nginx
+      source: pull
+
+  - name: Start container
+    docker_container:
+      image: nginx
+      name: nginx-app
+      ports:
+        - 80:80
+      state: absent
