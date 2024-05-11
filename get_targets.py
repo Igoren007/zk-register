@@ -37,10 +37,11 @@ def get_hosts_from_zk():
 def list2dict(lst, service_port):
     out = []
     for host in lst:
-        ip = host.split(',')[1].split(':')[1]
+        ip = host.split(',')[1].split(':')[1].split(' ')[0:-1]
         dct = {}
         host = []
-        host.append(f"{ip}:{service_port}")
+        for i in ip:
+            host.append(f"{i}:{service_port}")
         dct['targets'] = host
         out.append(dct)
     return out
